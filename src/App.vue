@@ -1,5 +1,5 @@
 <template>
-<h1>hello bhai log kya kar rahe ho tum sab </h1>
+<h1>hello bhai log kya kar rahe ho tum sab..!! <br>lets try this out</h1>
  <div v-if="showModal">
    <Modal theme ="sale" @close="toggleModal">
      
@@ -12,10 +12,22 @@
      <p>this is paragraph tag</p>
     
    </Modal>
+   
  </div>
- <button @click="toggleModal">
-open modal
- </button>
+<!-- second modal -->
+ <div v-if="showModalTwo">
+   <Modal  theme="sale" @close="toggleModalTwo">
+
+     <h1>This is slot</h1>
+     <p>this is Content </p>
+    
+   </Modal>
+   
+  </div>
+<button @click="toggleModal">open modal</button>
+<button @click="toggleModalTwo">open modalTwo</button>
+ 
+
 </template>
 
 <script>
@@ -29,12 +41,16 @@ export default {
       title:'this is the title:)',
       header:'this is header props',
       text:'this is text element',
-      showModal:false
+      showModal:false,
+      showModalTwo:false,
     }
   },
   methods:{
     toggleModal(){
       this.showModal=!this.showModal
+    },
+    toggleModalTwo(){
+      this.showModalTwo=!this.showModalTwo
     }
   }
 
