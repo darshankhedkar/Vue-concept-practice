@@ -1,4 +1,4 @@
-# Some vue concept you must try this
+# event
 
 ## Project setup
 ```

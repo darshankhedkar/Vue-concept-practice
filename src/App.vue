@@ -1,6 +1,6 @@
 <template>
 <h1>hello bhai log kya kar rahe ho tum sab..!! <br>lets try this out</h1>
- <div v-if="showModal">
+ <teleport to="#modal" v-if="showModal">
    <Modal theme ="sale" @close="toggleModal">
      
      <template v-slot:links>
@@ -13,9 +13,9 @@
     
    </Modal>
    
- </div>
+ </teleport>
 <!-- second modal -->
- <div v-if="showModalTwo">
+ <teleport to="#modal" v-if="showModalTwo">
    <Modal  theme="sale" @close="toggleModalTwo">
 
      <h1>This is slot</h1>
@@ -23,7 +23,7 @@
     
    </Modal>
    
-  </div>
+  </teleport >
 <button @click="toggleModal">open modal</button>
 <button @click="toggleModalTwo">open modalTwo</button>
  
@@ -58,7 +58,7 @@ export default {
 </script>
 
 <style >
-#app {
+#app,#modal {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
